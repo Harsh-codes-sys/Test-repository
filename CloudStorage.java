@@ -10,11 +10,12 @@ class CloudStorage {
         bill = 0.0;
     }
     void accept() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter space in GB:");
-        space = sc.nextInt();
-        System.out.println("Enter account number:");
-        acno = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter space in GB:");
+            space = sc.nextInt();
+            System.out.println("Enter account number:"); 
+            acno = sc.nextInt();
+        }
     }
     void calculateBill() {
         if (space <= 15) {
